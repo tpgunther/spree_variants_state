@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      spree/product:
+        active: Activa
+        discontinued: Discontinua
+        descontinued: Descontinua
+        no_active: No activa
