@@ -16,6 +16,6 @@ Spree::Variant.class_eval do
   end
 
   def no_active?
-    (discontinued? or descontinued?) and total_on_hand == 0
+    (discontinued? or descontinued?) and total_on_hand <= 0
   end
 end

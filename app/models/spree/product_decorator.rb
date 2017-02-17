@@ -1,7 +1,7 @@
 Spree::Product.class_eval do
 
   def all_variants_no_active?
-    variants.select(&:active).none?
+    variants.select(&:active?).none?
   end
 
   def any_variants_active?
