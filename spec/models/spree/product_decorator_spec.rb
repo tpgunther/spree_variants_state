@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-RSpec.describe Spree::Variant, type: :model do
+RSpec.describe Spree::Product, type: :model do
   let(:product) { FactoryGirl.create(:product) }
 
   before do
