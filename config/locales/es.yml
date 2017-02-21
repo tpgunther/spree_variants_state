@@ -3,6 +3,6 @@ es:
     attributes:
       spree/product:
         active: Activa
-        discontinued: Discontinua
-        descontinued: Descontinua
+        state_discontinued: Discontinua
+        state_descontinued: Descontinua
         no_active: No activa

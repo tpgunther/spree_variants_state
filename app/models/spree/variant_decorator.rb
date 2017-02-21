@@ -1,5 +1,5 @@
 Spree::Variant.class_eval do
-  enum state: [:active, :descontinued, :discontinued] unless instance_methods.include? :state
+  enum state: [:state_active, :state_descontinued, :state_discontinued] unless instance_methods.include? :state
 
   def state_name
     if no_active?
@@ -16,6 +16,6 @@ Spree::Variant.class_eval do
   end
 
   def no_active?
-    (discontinued? or descontinued?) and total_on_hand <= 0
+    (state_discontinued? or state_descontinued?) and total_on_hand <= 0
   end
 end

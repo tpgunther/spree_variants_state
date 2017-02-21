@@ -10,12 +10,12 @@ RSpec.describe Spree::Variant, type: :model do
 
   context '#discontinued' do
     before do
-      variant.update state: :discontinued
+      variant.update state: :state_discontinued
     end
 
     it 'variant is active' do
       expect(variant.active?).to be true
-      expect(variant.state_name).to eq I18n.t('activerecord.attributes.spree/product.discontinued')
+      expect(variant.state_name).to eq I18n.t('activerecord.attributes.spree/product.state_discontinued')
     end
 
     context 'with no stock' do
@@ -29,12 +29,12 @@ RSpec.describe Spree::Variant, type: :model do
 
   context '#descontinued' do
     before do
-      variant.update state: :descontinued
+      variant.update state: :state_descontinued
     end
 
     it 'variant is active' do
       expect(variant.active?).to be true
-      expect(variant.state_name).to eq I18n.t('activerecord.attributes.spree/product.descontinued')
+      expect(variant.state_name).to eq I18n.t('activerecord.attributes.spree/product.state_descontinued')
     end
 
     context 'with no stock' do

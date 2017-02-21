@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 RSpec.describe Spree::StockMovement, type: :model do
-  let(:variant) { FactoryGirl.create(:variant, :with_stock, product: FactoryGirl.create(:product, available_on: 1.day.ago), state: :discontinued) }
+  let(:variant) { FactoryGirl.create(:variant, :with_stock, product: FactoryGirl.create(:product, available_on: 1.day.ago), state: :state_discontinued) }
 
   it 'product is available' do
     expect(variant.active?).to be true
@@ -22,7 +22,7 @@ RSpec.describe Spree::StockMovement, type: :model do
 
     context 'with more variants' do
       before do
-        variant.product.variants << [create(:variant, state: :discontinued), create(:variant, state: :discontinued)]
+        variant.product.variants << [create(:variant, state: :state_discontinued), create(:variant, state: :state_discontinued)]
       end
 
       context 'when stock is 0 in one variant' do

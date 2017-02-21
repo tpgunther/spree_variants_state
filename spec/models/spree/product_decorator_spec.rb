@@ -15,7 +15,7 @@ RSpec.describe Spree::Product, type: :model do
     end
 
     it 'returns true if one variants is active' do
-      product.variants.first.update state: :discontinued
+      product.variants.first.update state: :state_discontinued
       product.variants.first.stock_items.first.set_count_on_hand 0
 
       expect(product.variants.first.no_active?).to be true
@@ -23,7 +23,7 @@ RSpec.describe Spree::Product, type: :model do
     end
 
     it 'returns false if no variants is active' do
-      product.variants.each { |v| v.update state: :discontinued }
+      product.variants.each { |v| v.update state: :state_discontinued }
       product.variants.each { |v| v.stock_items.first.set_count_on_hand 0 }
       product.variants.each { |v| expect(v.no_active?).to be true }
 
@@ -38,7 +38,7 @@ RSpec.describe Spree::Product, type: :model do
     end
 
     it 'returns false if one variants is active' do
-      product.variants.first.update state: :discontinued
+      product.variants.first.update state: :state_discontinued
       product.variants.first.stock_items.first.set_count_on_hand 0
       expect(product.variants.first.no_active?).to be true
 
@@ -46,7 +46,7 @@ RSpec.describe Spree::Product, type: :model do
     end
 
     it 'returns true if no variants is active' do
-      product.variants.each { |v| v.update state: :discontinued }
+      product.variants.each { |v| v.update state: :state_discontinued }
       product.variants.each { |v| v.stock_items.first.set_count_on_hand 0 }
       product.variants.each { |v| expect(v.no_active?).to be true }
 
