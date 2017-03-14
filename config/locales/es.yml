@@ -2,6 +2,7 @@ es:
   activerecord:
     attributes:
       spree/product:
+        state: Estado
         state_active: Activa
         state_discontinued: Discontinua
         state_descontinued: Descontinua
