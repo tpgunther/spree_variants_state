@@ -1,8 +1,13 @@
 # encoding: utf-8
 require 'spec_helper'
+require 'sidekiq/testing'
 
 RSpec.describe Spree::StockMovement, type: :model do
   let(:variant) { FactoryGirl.create(:variant, :with_stock, product: FactoryGirl.create(:product, available_on: 1.day.ago), state: :state_discontinued) }
+
+  before do
+    Sidekiq::Testing.inline!
+  end
 
   it 'product is available' do
     expect(variant.active?).to be true

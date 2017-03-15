@@ -18,4 +18,8 @@ Spree::Variant.class_eval do
   def no_active?
     (state_discontinued? or state_descontinued?) and total_on_hand <= 0
   end
+
+  def check_no_active_product
+    product.update(available_on: nil) if product.all_variants_no_active?
+  end
 end
