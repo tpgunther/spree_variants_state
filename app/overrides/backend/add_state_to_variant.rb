@@ -4,6 +4,6 @@ Deface::Override.new(:virtual_path => 'spree/admin/variants/_form',
   :text => "
     <div class='field' data-hook='admin_variants_form_state'>
       <%= f.label :state, raw(Spree.t(:state)) %>
-      <%= select(@variant, :state, options_for_select([['Activo','state_active'], ['Descontinuo', 'state_descontinued'], ['Discontinuo', 'state_discontinued']], @variant.state), {}, class: 'select2 fullwidth select2-offscreen') %>
+      <%= f.select(:state, options_for_select([['Activo','state_active'], ['Descontinuo', 'state_descontinued'], ['Discontinuo', 'state_discontinued']], @variant.state), {}, class: 'select2 fullwidth select2-offscreen') %>
     </div>
   ")
