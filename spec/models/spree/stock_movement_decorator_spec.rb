@@ -21,6 +21,7 @@ RSpec.describe Spree::StockMovement, type: :model do
 
           expect(variant.reload.product.available_on).to be nil
           expect(variant.reload.active?).to be false
+          expect(variant.reload.disable?).to be true
         end
       end
     end
@@ -34,6 +35,7 @@ RSpec.describe Spree::StockMovement, type: :model do
         it 'product is available' do
           expect(variant.reload.product.available_on).not_to be nil
           expect(variant.reload.active?).to be true
+          expect(variant.reload.disable?).to be false
         end
       end
 
@@ -43,6 +45,7 @@ RSpec.describe Spree::StockMovement, type: :model do
 
           expect(variant.reload.product.available_on).to be nil
           expect(variant.reload.active?).to be false
+          expect(variant.reload.disable?).to be true
         end
       end
     end
