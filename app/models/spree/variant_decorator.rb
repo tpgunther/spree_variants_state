@@ -5,7 +5,7 @@ Spree::Variant.class_eval do
     if no_active?
       I18n.t('activerecord.attributes.spree/product.no_active')
     elsif state.nil?
-      I18n.t('activerecord.attributes.spree/product.active')
+      I18n.t('activerecord.attributes.spree/product.state_active')
     else
       I18n.t("activerecord.attributes.spree/product.#{state}")
     end
