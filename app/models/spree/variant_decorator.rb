@@ -20,6 +20,7 @@ Spree::Variant.class_eval do
   end
 
   def check_no_active_product
+    update(disable: true) if no_active?
     product.update(available_on: nil) if product.all_variants_no_active?
   end
 end

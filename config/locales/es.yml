@@ -3,6 +3,7 @@ es:
     attributes:
       spree/product:
         state: Estado
+        disable: Deshabilitado
         state_active: Activa
         state_discontinued: Discontinua
         state_descontinued: Descontinua

@@ -4,6 +4,7 @@ Deface::Override.new(:virtual_path => 'spree/admin/variants/index',
   :text => "
       <th>Stock</th>
       <th>Estado</th>
+      <th>Deshabilitado</th>
   ")
 
 Deface::Override.new(:virtual_path => 'spree/admin/variants/index',
@@ -12,4 +13,6 @@ Deface::Override.new(:virtual_path => 'spree/admin/variants/index',
   :text => "
       <td class='align-center'><%= variant.total_on_hand %></td>
       <td class='align-center'><%= variant.state_name %></td>
+      <td class='align-center'><%= variant.disable %></td>
   ")
+
