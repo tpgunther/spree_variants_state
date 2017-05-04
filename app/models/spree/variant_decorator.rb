@@ -1,6 +1,8 @@
 Spree::Variant.class_eval do
   enum state: [:state_active, :state_descontinued, :state_discontinued] unless instance_methods.include? :state
 
+  scope :not_discontinued_or_descontinued, ->  { where('state IS NULL OR state = ?', :state_active) }
+
   def state_name
     if no_active?
       I18n.t('activerecord.attributes.spree/product.no_active')
